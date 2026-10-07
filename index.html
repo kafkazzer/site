@@ -11,26 +11,53 @@
     />
     <title>Нижегородцев Аксана Юрьевна</title>
     <style>
+      :root {
+        --color1: #ffb01f;
+        --color2: #ff850a;
+        --color3: #7c3c9d;
+        --color4: #df128d;
+        --bg-color: #f1f2f2;
+        --tx-color: rgb(38, 35, 36);
+        --sw-color: rgb(38, 35, 36, 0.4);
+        --gr1: linear-gradient(70deg, var(--color1), var(--color2));
+        --gr2: linear-gradient(70deg, var(--color3), var(--color4));
+      }
+
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
       }
+
+      html {
+        -webkit-text-size-adjust: 100%;
+      }
+
       body {
         background: var(--gr1);
         color: var(--tx-color);
         font-family: "Roboto", sans-serif;
         animation: back 5s infinite alternate;
+        overflow-x: hidden;
       }
+
       body h1 {
-        font-size: 50px;
+        font-size: clamp(30px, 4vw, 50px);
       }
       body h2 {
-        font-size: 40px;
+        font-size: clamp(22px, 3vw, 40px);
       }
       body p {
-        font-size: 25px;
+        font-size: clamp(16px, 1.8vw, 25px);
+        line-height: 1.5;
       }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+
       @keyframes back {
         0% {
           background-size: 100% 100%;
@@ -39,30 +66,29 @@
           background-size: 400% 400%;
         }
       }
+
       .banner {
-        /* background: var(--bg-color); */
         background-image: url("img/back.png");
         background-size: cover;
-        height: 93vh;
+        min-height: 93vh;
         display: flex;
         flex-direction: row;
       }
       .banner h2 {
-        font-size: 5vw;
+        font-size: clamp(30px, 5vw, 72px);
       }
       .banner p {
-        font-size: 1.5vw;
+        font-size: clamp(15px, 1.5vw, 22px);
       }
       .item {
         flex: 1;
+        min-width: 0;
       }
       .bannerText {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        padding-left: 5vw;
-        padding-top: 5vh;
-        padding-bottom: 5vh;
+        padding: 5vh 3vw 5vh 5vw;
       }
       .bannerText img {
         width: 300px;
@@ -78,21 +104,32 @@
       }
       .bannerimage {
         background-image: url("img/banner1.png");
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
       }
+
       .navigation {
         background: var(--bg-color);
-        /* width: 100vw; */
-        height: 7vh;
+        min-height: 7vh;
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         align-items: center;
         text-align: center;
         justify-content: space-evenly;
+        gap: 8px 3vw;
+        padding: 12px 3vw;
       }
       .navigation h2 {
-        font-size: 32px;
+        font-size: clamp(17px, 2.2vw, 32px);
+        cursor: pointer;
+        transition: color 0.2s;
       }
+      .navigation h2:hover {
+        color: var(--color4);
+      }
+
       .container {
         background: var(--bg-color);
         border-radius: 16px;
@@ -101,46 +138,246 @@
         box-shadow: 0 1px 40px 0 var(--sw-color);
       }
 
-      .row {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-evenly;
-        padding-top: 5vh;
-      }
       .containerFluid {
         background: var(--bg-color);
         padding: 5vh 3vw;
       }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        gap: 3vh 2vw;
+        padding-top: 5vh;
+      }
+
+      .cert {
+        background: #333;
+        flex: 0 1 300px;
+        max-width: 100%;
+        aspect-ratio: 2 / 3;
+        border-radius: 8px;
+        background-size: cover;
+      }
+      .news-card {
+        flex: 1 1 380px;
+        max-width: 100%;
+        width: 100%;
+        height: 500px;
+        border-radius: 8px;
+        object-fit: contain; /* сохраняет пропорции, если высота ограничена */
+        display: block;
+        background: none; /* убираем серый фон */
+      }
+
+      .form {
+        text-align: center;
+        width: 100%;
+        max-width: 600px;
+      }
       .inp {
         border: 3px solid var(--tx-color);
         color: var(--tx-color);
+        background: transparent;
         border-radius: 16px;
         padding: 15px;
-        font-size: 25px;
+        font-size: clamp(16px, 1.8vw, 25px);
         margin-top: 3vh;
+        width: 100%;
+        font-family: inherit;
+        outline: none;
+      }
+      .inp:focus {
+        border-color: var(--color4);
       }
       .btn {
         background: var(--gr2);
         border-radius: 16px;
-        padding: 15px;
-        font-size: 25px;
+        padding: 15px 40px;
+        font-size: clamp(16px, 1.8vw, 25px);
         color: var(--bg-color);
         border: 0;
         margin-top: 3vh;
+        cursor: pointer;
+        font-family: inherit;
+        width: 100%;
+        max-width: 320px;
+        transition: transform 0.15s;
       }
-      .form {
-        text-align: center;
+      .btn:active {
+        transform: scale(0.97);
       }
-      :root {
-        --color1: #ffb01f;
-        --color2: #ff850a;
-        --color3: #7c3c9d;
-        --color4: #df128d;
-        --bg-color: #f1f2f2;
-        --tx-color: rgb(38, 35, 36);
-        --sw-color: rgb(38, 35, 36, 0.4);
-        --gr1: linear-gradient(70deg, var(--color1), var(--color2));
-        --gr2: linear-gradient(70deg, var(--color3), var(--color4));
+
+      @media (min-width: 1600px) {
+        .container {
+          max-width: 1500px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        .containerFluid {
+          padding-left: max(3vw, calc((100vw - 1500px) / 2));
+          padding-right: max(3vw, calc((100vw - 1500px) / 2));
+        }
+        .bannerText {
+          padding-left: 8vw;
+        }
+      }
+
+      @media (max-width: 1024px) {
+        .banner {
+          min-height: 75vh;
+        }
+        .bannerText {
+          padding: 4vh 3vw 4vh 4vw;
+        }
+        .bannerText img {
+          width: 220px;
+        }
+        .container {
+          margin: 4vh 3vw;
+          padding: 4vh 4vw;
+        }
+        .containerFluid {
+          padding: 4vh 4vw;
+        }
+        .row {
+          padding-top: 4vh;
+        }
+        .cert {
+          flex: 0 1 240px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .banner {
+          flex-direction: column;
+          min-height: auto;
+        }
+        .item {
+          flex: 0 0 auto;
+        }
+        .bannerText {
+          padding: 4vh 5vw 0;
+          align-items: center;
+          text-align: center;
+        }
+        .bannerText img {
+          width: min(200px, 55vw);
+        }
+        .bannerTextContent {
+          justify-content: flex-start;
+          margin-top: 3vh;
+        }
+        .banner h2 {
+          font-size: clamp(28px, 9vw, 44px);
+        }
+        .banner p {
+          font-size: clamp(15px, 4vw, 19px);
+        }
+        .bannerimage {
+          width: 100%;
+          min-height: 40vh;
+          margin-top: 4vh;
+        }
+
+        .navigation {
+          justify-content: center;
+          gap: 6px 6vw;
+          padding: 10px 4vw;
+        }
+        .navigation h2 {
+          font-size: 17px;
+        }
+
+        .container {
+          margin: 3vh 3vw;
+          padding: 3.5vh 5vw;
+          border-radius: 14px;
+        }
+        .containerFluid {
+          padding: 4vh 5vw;
+        }
+
+        .row {
+          gap: 2.5vh 4vw;
+          padding-top: 3vh;
+        }
+        .cert {
+          flex: 1 1 40%;
+        }
+        .news-card {
+          flex: 1 1 100%;
+        }
+        .form {
+          max-width: 100%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .navigation h2 {
+          font-size: 15px;
+        }
+        .container {
+          margin: 2.5vh 4vw;
+          padding: 3vh 5vw;
+          border-radius: 12px;
+        }
+        .bannerimage {
+          min-height: 32vh;
+        }
+        .cert {
+          flex: 1 1 100%;
+          aspect-ratio: 3 / 4;
+        }
+        .news-card {
+          flex: 1 1 100%;
+          height: 200px;
+        }
+        .inp {
+          padding: 12px;
+          border-width: 2px;
+          border-radius: 12px;
+          margin-top: 2vh;
+        }
+        .btn {
+          padding: 12px 20px;
+          border-radius: 12px;
+          margin-top: 2vh;
+        }
+      }
+
+      @media (max-width: 900px) and (orientation: landscape) and (max-height: 500px) {
+        .banner {
+          flex-direction: row;
+          min-height: 100vh;
+        }
+        .bannerText {
+          padding: 3vh 3vw;
+          align-items: flex-start;
+          text-align: left;
+        }
+        .banner h2 {
+          font-size: clamp(22px, 5vh, 34px);
+        }
+        .banner p {
+          font-size: 14px;
+        }
+        .bannerimage {
+          width: auto;
+          min-height: 100vh;
+          margin-top: 0;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        body {
+          animation: none;
+        }
+        .btn:active {
+          transform: none;
+        }
       }
     </style>
   </head>
@@ -151,12 +388,13 @@
       <h2>Новости</h2>
       <h2>Контакты</h2>
     </nav>
+
     <div class="banner">
       <div class="item bannerText">
-        <img src="img/logo.png" />
+        <img src="img/logo.png" alt="Логотип" />
         <div class="bannerTextContent">
           <h2>Нижегородцева</h2>
-          <h2>Аксана 2</h2>
+          <h2>Аксана</h2>
           <p>
             «Навигаторы детства» — это Всероссийская команда советников
             директоров по воспитанию и взаимодействию с детскими общественными
@@ -167,58 +405,95 @@
       </div>
       <div class="item bannerimage"></div>
     </div>
+
     <div class="container">
       <h2>Обо мне</h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
-        recusandae ullam eveniet possimus vero ipsum accusantium sit, dolor
-        facilis qui facere quia exercitationem nostrum mollitia sint provident.
-        Eos, accusamus architecto? Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Porro quae reprehenderit vitae facere unde, expedita
-        tempora. Praesentium voluptatem voluptates aut. Ad dolorem molestiae at,
-        quam nostrum quos iusto cumque nulla.
+        Активный и инициативный советник директора по воспитанию, победитель
+        конкурсов различного уровня. Участвует в организации воспитательных
+        мероприятий, поддерживает инициативы обучающихся и способствует развитию
+        их творческого потенциала. Отличается ответственностью, энергичностью и
+        стремлением к профессиональному росту.
       </p>
     </div>
+
     <div class="container">
       <h1>Победы</h1>
       <br />
       <h2>Достижения</h2>
+      <p>- Почетная Грамота Думы города Бийска;</p>
       <p>
-        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit."
+        - Благодарственное письмо Алтайского законодательного собрания
+        Алтайского края;
       </p>
       <p>
-        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit."
+        - Почетная грамота Министерства образования и науки Алтайского края
+        (2018)
       </p>
       <p>
-        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit."
+        - Благодарность от Совета регионального отделения Общероссийского
+        общественно-государственного движения детей и молодёжи «Движения Первых»
+        Алтайского края
       </p>
       <p>
-        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit."
+        - Благодарственное письмо от регионального координатора федерального
+        проекта «Навигаторы детства»
       </p>
       <p>
-        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit."
+        - Победитель конкурса на присуждение премий лучшим учителям за
+        достижения в педагогической деятельности в 2022 году
       </p>
+      <p>- Благодарственное письмо от ФГПУ «Росдетцентр»</p>
+      <p>
+        - Сертификат очного обучения по программе развития социальной активности
+        младших школьников «Орлята России» в ВДЦ «Орленок»
+      </p>
+      <p>
+        - Сертификат очного участия в Форуме классных руководителей в г.Москве
+      </p>
+      <p>
+        - Сертификат участника очного участия (г.Москва) в конкурсе молодежных
+        проектов стратегии социально-экономического развития «Россия -2035»
+      </p>
+      <p>
+        - Сертификат участника всероссийского конкурса педагогических
+        работни-ков «Воспитать человека»
+      </p>
+      <p>- Сертификат участника «Флагманы образования. Школа»</p>
       <br />
       <h2>Грамоты</h2>
       <div class="row">
-        <div style="background: #333; width: 300px; height: 450px"></div>
-        <div style="background: #333; width: 300px; height: 450px"></div>
-        <div style="background: #333; width: 300px; height: 450px"></div>
-        <div style="background: #333; width: 300px; height: 450px"></div>
+        <div
+          class="cert"
+          style="background-image: url(&quot;img/Работа экспертом.jpg&quot;)"
+        ></div>
+        <div
+          class="cert"
+          style="
+            background-image: url(&quot;img/Обучение служением Первые.jpg&quot;);
+          "
+        ></div>
+        <div
+          class="cert"
+          style="background-image: url(&quot;img/Росдетцентр 2026.jpg&quot;)"
+        ></div>
+        <div
+          class="cert"
+          style="
+            background-image: url(&quot;img/Ростетцентр_Благодарственное письмо.jpg&quot;);
+          "
+        ></div>
       </div>
     </div>
+
     <div class="container">
       <h2>Новости</h2>
       <div class="row">
-        <div style="background: #333; width: 600px; height: 450px"></div>
-        <div style="background: #333; width: 600px; height: 450px"></div>
+        <img class="news-card" src="news/news (1).png" />
+        <img class="news-card" src="news/news (2).png" />
       </div>
     </div>
+
     <div class="container">
       <h2>Связаться со мной</h2>
       <div class="row">
@@ -230,6 +505,7 @@
         </div>
       </div>
     </div>
+
     <div class="containerFluid">
       <h2>Контакты</h2>
       <p>+7 923 797 94 23</p>
