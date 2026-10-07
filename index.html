@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Нижегородцев Аксана Юрьевна</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background: var(--gr1);
+        color: var(--tx-color);
+        font-family: "Roboto", sans-serif;
+        animation: back 5s infinite alternate;
+      }
+      body h1 {
+        font-size: 50px;
+      }
+      body h2 {
+        font-size: 40px;
+      }
+      body p {
+        font-size: 25px;
+      }
+      @keyframes back {
+        0% {
+          background-size: 100% 100%;
+        }
+        100% {
+          background-size: 400% 400%;
+        }
+      }
+      .banner {
+        /* background: var(--bg-color); */
+        background-image: url("img/back.png");
+        background-size: cover;
+        height: 93vh;
+        display: flex;
+        flex-direction: row;
+      }
+      .banner h2 {
+        font-size: 5vw;
+      }
+      .banner p {
+        font-size: 1.5vw;
+      }
+      .item {
+        flex: 1;
+      }
+      .bannerText {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 5vw;
+        padding-top: 5vh;
+        padding-bottom: 5vh;
+      }
+      .bannerText img {
+        width: 300px;
+        max-width: 100%;
+        height: auto;
+      }
+      .bannerTextContent {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .bannerimage {
+        background-image: url("img/banner1.png");
+        background-size: cover;
+      }
+      .navigation {
+        background: var(--bg-color);
+        /* width: 100vw; */
+        height: 7vh;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+      }
+      .navigation h2 {
+        font-size: 32px;
+      }
+      .container {
+        background: var(--bg-color);
+        border-radius: 16px;
+        margin: 5vh 3vw;
+        padding: 5vh 3vw;
+        box-shadow: 0 1px 40px 0 var(--sw-color);
+      }
+
+      .row {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        padding-top: 5vh;
+      }
+      .containerFluid {
+        background: var(--bg-color);
+        padding: 5vh 3vw;
+      }
+      .inp {
+        border: 3px solid var(--tx-color);
+        color: var(--tx-color);
+        border-radius: 16px;
+        padding: 15px;
+        font-size: 25px;
+        margin-top: 3vh;
+      }
+      .btn {
+        background: var(--gr2);
+        border-radius: 16px;
+        padding: 15px;
+        font-size: 25px;
+        color: var(--bg-color);
+        border: 0;
+        margin-top: 3vh;
+      }
+      .form {
+        text-align: center;
+      }
+      :root {
+        --color1: #ffb01f;
+        --color2: #ff850a;
+        --color3: #7c3c9d;
+        --color4: #df128d;
+        --bg-color: #f1f2f2;
+        --tx-color: rgb(38, 35, 36);
+        --sw-color: rgb(38, 35, 36, 0.4);
+        --gr1: linear-gradient(70deg, var(--color1), var(--color2));
+        --gr2: linear-gradient(70deg, var(--color3), var(--color4));
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navigation">
+      <h2>Обо мне</h2>
+      <h2>Достижения</h2>
+      <h2>Новости</h2>
+      <h2>Контакты</h2>
+    </nav>
+    <div class="banner">
+      <div class="item bannerText">
+        <img src="img/logo.png" />
+        <div class="bannerTextContent">
+          <h2>Нижегородцева</h2>
+          <h2>Аксана</h2>
+          <p>
+            «Навигаторы детства» — это Всероссийская команда советников
+            директоров по воспитанию и взаимодействию с детскими общественными
+            объединениями, которая смотрит на воспитание по новому и работает с
+            детьми по зову сердца.
+          </p>
+        </div>
+      </div>
+      <div class="item bannerimage"></div>
+    </div>
+    <div class="container">
+      <h2>Обо мне</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat
+        recusandae ullam eveniet possimus vero ipsum accusantium sit, dolor
+        facilis qui facere quia exercitationem nostrum mollitia sint provident.
+        Eos, accusamus architecto? Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Porro quae reprehenderit vitae facere unde, expedita
+        tempora. Praesentium voluptatem voluptates aut. Ad dolorem molestiae at,
+        quam nostrum quos iusto cumque nulla.
+      </p>
+    </div>
+    <div class="container">
+      <h1>Победы</h1>
+      <br />
+      <h2>Достижения</h2>
+      <p>
+        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit."
+      </p>
+      <p>
+        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit."
+      </p>
+      <p>
+        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit."
+      </p>
+      <p>
+        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit."
+      </p>
+      <p>
+        - Победа в конкурсе "Lorem, ipsum dolor sit amet consectetur adipisicing
+        elit."
+      </p>
+      <br />
+      <h2>Грамоты</h2>
+      <div class="row">
+        <div style="background: #333; width: 300px; height: 450px"></div>
+        <div style="background: #333; width: 300px; height: 450px"></div>
+        <div style="background: #333; width: 300px; height: 450px"></div>
+        <div style="background: #333; width: 300px; height: 450px"></div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Новости</h2>
+      <div class="row">
+        <div style="background: #333; width: 600px; height: 450px"></div>
+        <div style="background: #333; width: 600px; height: 450px"></div>
+      </div>
+    </div>
+    <div class="container">
+      <h2>Связаться со мной</h2>
+      <div class="row">
+        <div class="form">
+          <input type="text" placeholder="Ваше имя" class="inp" /><br />
+          <input type="text" placeholder="Почта" class="inp" /><br />
+          <input type="text" placeholder="Сообщение" class="inp" /><br />
+          <input type="button" class="btn" value="Отправить" />
+        </div>
+      </div>
+    </div>
+    <div class="containerFluid">
+      <h2>Контакты</h2>
+      <p>+7 923 797 94 23</p>
+      <p>NAksana2006@yandex.ru</p>
+    </div>
+  </body>
+</html>
