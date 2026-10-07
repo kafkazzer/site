@@ -121,14 +121,19 @@
         gap: 8px 3vw;
         padding: 12px 3vw;
       }
-      .navigation h2 {
-        font-size: clamp(17px, 2.2vw, 32px);
-        cursor: pointer;
-        transition: color 0.2s;
-      }
-      .navigation h2:hover {
-        color: var(--color4);
-      }
+      .navigation a {
+  font-size: clamp(17px, 2.2vw, 32px);
+  cursor: pointer;
+  transition: color 0.2s;
+  color: var(--tx-color);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 700;
+}
+
+.navigation a:hover {
+  color: var(--color4);
+}
 
       .container {
         background: var(--bg-color);
@@ -287,9 +292,9 @@
           gap: 6px 6vw;
           padding: 10px 4vw;
         }
-        .navigation h2 {
-          font-size: 17px;
-        }
+        .navigation a {
+  font-size: 17px;
+}
 
         .container {
           margin: 3vh 3vw;
@@ -316,9 +321,9 @@
       }
 
       @media (max-width: 480px) {
-        .navigation h2 {
-          font-size: 15px;
-        }
+        .navigation a {
+  font-size: 15px;
+}
         .container {
           margin: 2.5vh 4vw;
           padding: 3vh 5vw;
@@ -383,11 +388,11 @@
   </head>
   <body>
     <nav class="navigation">
-      <h2>Обо мне</h2>
-      <h2>Достижения</h2>
-      <h2>Новости</h2>
-      <h2>Контакты</h2>
-    </nav>
+  <a href="#about">Обо мне</a>
+  <a href="#achievements">Достижения</a>
+  <a href="#news">Новости</a>
+  <a href="#contacts">Контакты</a>
+</nav>
 
     <div class="banner">
       <div class="item bannerText">
@@ -406,7 +411,7 @@
       <div class="item bannerimage"></div>
     </div>
 
-    <div class="container">
+    <div class="container"  id="about">
       <h2>Обо мне</h2>
       <p>
         Активный и инициативный советник директора по воспитанию, победитель
@@ -417,7 +422,7 @@
       </p>
     </div>
 
-    <div class="container">
+    <div class="container" id="achievements">
       <h1>Победы</h1>
       <br />
       <h2>Достижения</h2>
@@ -486,7 +491,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="news">
       <h2>Новости</h2>
       <div class="row">
         <img class="news-card" src="news/news (1).png" />
@@ -494,7 +499,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="container" id="contacts">
       <h2>Связаться со мной</h2>
       <div class="row">
         <div class="form">
