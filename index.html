@@ -122,18 +122,18 @@
         padding: 12px 3vw;
       }
       .navigation a {
-  font-size: clamp(17px, 2.2vw, 32px);
-  cursor: pointer;
-  transition: color 0.2s;
-  color: var(--tx-color);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  font-weight: 700;
-}
+        font-size: clamp(17px, 2.2vw, 32px);
+        cursor: pointer;
+        transition: color 0.2s;
+        color: var(--tx-color);
+        text-decoration: underline;
+        text-underline-offset: 4px;
+        font-weight: 700;
+      }
 
-.navigation a:hover {
-  color: var(--color4);
-}
+      .navigation a:hover {
+        color: var(--color4);
+      }
 
       .container {
         background: var(--bg-color);
@@ -214,14 +214,14 @@
       .btn:active {
         transform: scale(0.97);
       }
-a {
-  color: var(--color3);
-  transition: color 0.2s;
-}
+      a {
+        color: var(--color3);
+        transition: color 0.2s;
+      }
 
-a:hover {
-  color: var(--color4);
-}
+      a:hover {
+        color: var(--color4);
+      }
       @media (min-width: 1600px) {
         .container {
           max-width: 1500px;
@@ -300,8 +300,8 @@ a:hover {
           padding: 10px 4vw;
         }
         .navigation a {
-  font-size: 17px;
-}
+          font-size: 17px;
+        }
 
         .container {
           margin: 3vh 3vw;
@@ -329,8 +329,8 @@ a:hover {
 
       @media (max-width: 480px) {
         .navigation a {
-  font-size: 15px;
-}
+          font-size: 15px;
+        }
         .container {
           margin: 2.5vh 4vw;
           padding: 3vh 5vw;
@@ -395,11 +395,11 @@ a:hover {
   </head>
   <body>
     <nav class="navigation">
-  <a href="#about">Обо мне</a>
-  <a href="#achievements">Достижения</a>
-  <a href="#news">Новости</a>
-  <a href="#contacts">Контакты</a>
-</nav>
+      <a href="#about">Обо мне</a>
+      <a href="#achievements">Достижения</a>
+      <a href="#news">Новости</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
 
     <div class="banner">
       <div class="item bannerText">
@@ -418,7 +418,7 @@ a:hover {
       <div class="item bannerimage"></div>
     </div>
 
-    <div class="container"  id="about">
+    <div class="container" id="about">
       <h2>Обо мне</h2>
       <p>
         Активный и инициативный советник директора по воспитанию, победитель
@@ -505,7 +505,7 @@ a:hover {
         <img class="news-card" src="news/news (2).png" />
       </div>
     </div>
-        <div class="container">
+    <div class="container">
       <h2>Сценарии</h2>
       <a
         href="https://nsportal.ru/nachalnaya-shkola/stsenarii-prazdnikov/2013/12/14/prazdnik-maslenitsa"
@@ -534,17 +534,22 @@ a:hover {
         >- Один день из жизни нашего дружного класса</a
       ><br />
     </div>
-<div class="container" id="contacts">
+    <div class="container" id="contacts">
       <h2>Связаться со мной</h2>
-    <div class="form">
-            <div class="row">
-  <input type="text" placeholder="Ваше имя" class="inp" /><br />
-  <input type="text" placeholder="Почта" class="inp" /><br />
-  <input type="text" placeholder="Сообщение" class="inp" /><br />
-  <input type="button" class="btn" value="Отправить" onclick="sendMessage(this)" />
-</div>
+      <div class="form">
+        <div class="row">
+          <input type="text" placeholder="Ваше имя" class="inp" /><br />
+          <input type="text" placeholder="Почта" class="inp" /><br />
+          <input type="text" placeholder="Сообщение" class="inp" /><br />
+          <input
+            type="button"
+            class="btn"
+            value="Отправить"
+            onclick="sendMessage(this)"
+          />
+        </div>
       </div>
-</div>
+    </div>
     <div class="containerFluid">
       <h2>Контакты</h2>
       <p>+7 923 797 94 23</p>
@@ -552,12 +557,12 @@ a:hover {
     </div>
   </body>
   <script>
-  function sendMessage(btn) {
-    const form = btn.closest(".form");
-    form.querySelectorAll(".inp").forEach((input) => {
-      input.value = "";
-    });
-    alert("Сообщение успешно отправлено. Ожидайте ответа");
-  }
-</script>
+    function sendMessage(btn) {
+      const form = btn.closest(".form");
+      form.querySelectorAll(".inp").forEach((input) => {
+        input.value = "";
+      });
+      alert("Сообщение успешно отправлено. Ожидайте ответа");
+    }
+  </script>
 </html>
